@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF2563EB);      // Clean blue
-  static const Color secondary = Color(0xFF10B981);    // Fresh green
-  static const Color accent = Color(0xFF8B5CF6);       // Purple accent
-  static const Color danger = Color(0xFFEF4444);       // Red for delete
-  static const Color warning = Color(0xFFF59E0B);      // Amber
-  static const Color surface = Color(0xFFF9FAFB);      // Light gray
-  static const Color border = Color(0xFFE5E7EB);       // Light border
-  static const Color text = Color(0xFF1F2937);         // Dark text
-  static const Color textLight = Color(0xFF6B7280);    // Light text
+  static const Color primary = Color(0xFF2563EB);
+  static const Color secondary = Color(0xFF10B981);
+  static const Color accent = Color(0xFF8B5CF6);
+  static const Color danger = Color(0xFFEF4444);
+  static const Color warning = Color(0xFFF59E0B);
+  static const Color surface = Color(0xFFF9FAFB);
+  static const Color border = Color(0xFFE5E7EB);
+  static const Color text = Color(0xFF1F2937);
+  static const Color textLight = Color(0xFF6B7280);
 }
 
 class AppTextStyles {

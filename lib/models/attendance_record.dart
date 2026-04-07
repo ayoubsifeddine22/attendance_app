@@ -13,7 +13,6 @@ class AttendanceRecord {
     required this.timestamp,
   });
 
-  // Convert to Firestore map
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -24,7 +23,6 @@ class AttendanceRecord {
     };
   }
 
-  // Create from Firestore document
   factory AttendanceRecord.fromMap(Map<String, dynamic> map, String docId) {
     return AttendanceRecord(
       id: docId,

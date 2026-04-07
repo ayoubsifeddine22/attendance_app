@@ -26,7 +26,7 @@ class TeacherHomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              // Header
+
               Container(
                 padding: const EdgeInsets.fromLTRB(24, 20, 24, 32),
                 decoration: BoxDecoration(
@@ -65,7 +65,7 @@ class TeacherHomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // Content
+
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32),

@@ -4,7 +4,6 @@ import 'package:attendance_app/models/attendance_record.dart';
 class AttendanceService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Record attendance for a student
   Future<AttendanceRecord> recordAttendance(
     String studentId,
     String subjectId,
@@ -27,7 +26,6 @@ class AttendanceService {
     }
   }
 
-  // Check if student already marked attendance for this subject today
   Future<bool> hasAttendanceToday(String studentId, String subjectId) async {
     try {
       final now = DateTime.now();
@@ -48,7 +46,6 @@ class AttendanceService {
     }
   }
 
-  // Get attendance records for a specific subject
   Future<List<AttendanceRecord>> getSubjectAttendance(String subjectId) async {
     try {
       final snapshot = await _firestore
@@ -60,7 +57,7 @@ class AttendanceService {
           .map((doc) => AttendanceRecord.fromMap(doc.data(), doc.id))
           .toList();
       
-      // Sort by timestamp in descending order (newest first)
+
       records.sort((a, b) => b.timestamp.compareTo(a.timestamp));
       return records;
     } catch (e) {
@@ -68,7 +65,6 @@ class AttendanceService {
     }
   }
 
-  // Get unique students who attended a subject
   Future<List<Map<String, dynamic>>> getSubjectAttendanceList(
       String subjectId) async {
     try {
@@ -77,11 +73,9 @@ class AttendanceService {
           .where('subjectId', isEqualTo: subjectId)
           .get();
 
-      // Get unique student IDs
       final studentIds =
           snapshot.docs.map((doc) => doc['studentId'] as String).toSet();
 
-      // Fetch student details
       final students = <Map<String, dynamic>>[];
       for (final studentId in studentIds) {
         final userDoc =
@@ -103,7 +97,6 @@ class AttendanceService {
     }
   }
 
-  // Get attendance records for a student (for viewing their history)
   Future<List<AttendanceRecord>> getStudentAttendance(String studentId) async {
     try {
       final snapshot = await _firestore
@@ -115,7 +108,7 @@ class AttendanceService {
           .map((doc) => AttendanceRecord.fromMap(doc.data(), doc.id))
           .toList();
       
-      // Sort by timestamp in descending order (newest first)
+
       records.sort((a, b) => b.timestamp.compareTo(a.timestamp));
       return records;
     } catch (e) {

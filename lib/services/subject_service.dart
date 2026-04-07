@@ -4,7 +4,6 @@ import 'package:attendance_app/models/subject.dart';
 class SubjectService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Add a new subject
   Future<Subject> addSubject(String teacherId, String subjectName) async {
     try {
       final docRef = _firestore.collection('subjects').doc();
@@ -22,7 +21,6 @@ class SubjectService {
     }
   }
 
-  // Get all subjects for a teacher
   Future<List<Subject>> getTeacherSubjects(String teacherId) async {
     try {
       final snapshot = await _firestore
@@ -34,7 +32,7 @@ class SubjectService {
           .map((doc) => Subject.fromMap(doc.data(), doc.id))
           .toList();
       
-      // Sort by createdAt in descending order (newest first)
+
       subjects.sort((a, b) => b.createdAt.compareTo(a.createdAt));
       return subjects;
     } catch (e) {
@@ -42,7 +40,6 @@ class SubjectService {
     }
   }
 
-  // Get a specific subject by ID
   Future<Subject?> getSubject(String subjectId) async {
     try {
       final doc = await _firestore.collection('subjects').doc(subjectId).get();
@@ -55,7 +52,6 @@ class SubjectService {
     }
   }
 
-  // Delete a subject
   Future<void> deleteSubject(String subjectId) async {
     try {
       await _firestore.collection('subjects').doc(subjectId).delete();

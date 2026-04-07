@@ -68,7 +68,6 @@ class _AttendanceHistoryScreenState extends State<AttendanceHistoryScreen> {
               );
             }
 
-            // Group records by subject
             final Map<String, List<AttendanceRecord>> groupedRecords = {};
             for (final record in records) {
               if (!groupedRecords.containsKey(record.subjectName)) {

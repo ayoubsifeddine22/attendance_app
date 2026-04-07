@@ -157,7 +157,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
               }
             },
           ),
-          // Overlay frame
+
           Center(
             child: Container(
               width: 280,
@@ -191,7 +191,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
               ),
             ),
           ),
-          // Processing indicator
+
           if (_isProcessing)
             Container(
               color: Colors.black.withOpacity(0.6),
@@ -206,7 +206,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
                 ),
               ),
             ),
-          // Bottom instruction
+
           Positioned(
             bottom: 40,
             left: 0,

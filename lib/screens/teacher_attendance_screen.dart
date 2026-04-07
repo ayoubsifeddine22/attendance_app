@@ -48,7 +48,7 @@ class _TeacherAttendanceScreenState extends State<TeacherAttendanceScreen> {
               ),
               child: Column(
                 children: [
-                  // Header
+
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: const BoxDecoration(
@@ -82,7 +82,7 @@ class _TeacherAttendanceScreenState extends State<TeacherAttendanceScreen> {
                       ],
                     ),
                   ),
-                  // List
+
                   Expanded(
                     child: attendanceList.isEmpty
                         ? const Center(

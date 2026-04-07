@@ -11,7 +11,6 @@ class Subject {
     required this.createdAt,
   });
 
-  // Convert to Firestore map
   Map<String, dynamic> toMap() {
     return {
       'id': id,
@@ -21,7 +20,6 @@ class Subject {
     };
   }
 
-  // Create from Firestore document
   factory Subject.fromMap(Map<String, dynamic> map, String docId) {
     return Subject(
       id: docId,

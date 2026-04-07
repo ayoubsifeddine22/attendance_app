@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Header
+
                   Center(
                     child: Column(
                       children: [
@@ -95,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 48),
-                  // Form
+
                   Text('Welcome Back', style: AppTextStyles.subheading),
                   const SizedBox(height: 24),
                   TextField(
@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: AppDecorations.textFieldDecoration('Password'),
                   ),
                   const SizedBox(height: 32),
-                  // Login Button
+
                   SizedBox(
                     width: double.infinity,
                     height: 48,
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                   ),
                   const SizedBox(height: 16),
-                  // Sign Up Link
+
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -175,4 +175,3 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 }
-

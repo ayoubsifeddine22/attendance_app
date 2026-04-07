@@ -93,7 +93,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: AppDecorations.textFieldDecoration('Password'),
                 ),
                 const SizedBox(height: 32),
-                // Role selection
+
                 Text('Select your role:', style: AppTextStyles.subheading),
                 const SizedBox(height: 16),
                 Row(
@@ -108,7 +108,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ],
                 ),
                 const SizedBox(height: 32),
-                // Sign Up Button
+
                 SizedBox(
                   width: double.infinity,
                   height: 48,
@@ -192,4 +192,3 @@ class _SignupScreenState extends State<SignupScreen> {
     super.dispose();
   }
 }
-

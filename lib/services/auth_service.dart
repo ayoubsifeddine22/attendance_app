@@ -5,7 +5,6 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Login with email and password
   Future<Map<String, dynamic>?> login(String email, String password) async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
@@ -13,7 +12,6 @@ class AuthService {
         password: password,
       );
 
-      // Get user role from Firestore
       DocumentSnapshot userDoc =
           await _firestore.collection('users').doc(userCredential.user!.uid).get();
 
@@ -21,7 +19,7 @@ class AuthService {
         return {
           'uid': userCredential.user!.uid,
           'email': userCredential.user!.email,
-          'role': userDoc['role'], // 'student' or 'teacher'
+          'role': userDoc['role'],
         };
       }
       return null;
@@ -30,7 +28,6 @@ class AuthService {
     }
   }
 
-  // Signup with email and password
   Future<Map<String, dynamic>?> signup(
     String email,
     String password,
@@ -42,10 +39,9 @@ class AuthService {
         password: password,
       );
 
-      // Store user data in Firestore
       await _firestore.collection('users').doc(userCredential.user!.uid).set({
         'email': email,
-        'role': role, // 'student' or 'teacher'
+        'role': role,
         'createdAt': FieldValue.serverTimestamp(),
       });
 
@@ -59,12 +55,10 @@ class AuthService {
     }
   }
 
-  // Logout
   Future<void> logout() async {
     await _auth.signOut();
   }
 
-  // Get current user
   User? getCurrentUser() {
     return _auth.currentUser;
   }
